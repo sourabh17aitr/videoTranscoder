@@ -9,6 +9,6 @@ EXPOSE 8080
 # The application's jar file (when packaged)
 ARG JAR_FILE=target/transcoder-0.0.1-SNAPSHOT.jar
 # Add the application's jar to the container
-ADD ${JAR_FILE} transcoder.jar
+ADD ${JAR_FILE} transcoder-0.0.1-SNAPSHOT.jar
 # Run the jar file 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/transcoder.jar"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/transcoder-0.0.1-SNAPSHOT.jar"]
