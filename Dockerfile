@@ -1,14 +1,8 @@
-# Start with a base image containing Java runtime (mine java 8)
-FROM openjdk:8u212-jdk-slim
-# Add Maintainer Info
-LABEL maintainer="sourabh.aitr@gmail.com"
-# Add a volume pointing to /tmp
-VOLUME /tmp
-# Make port 8080 available to the world outside this container
+# Selecting openjdk-alphine as base image which uses debian:stretch-slim as base
+FROM openjdk:jdk-alpine
+# Adding the jar to the image
+ADD target/transcoder-0.0.1-SNAPSHOT.jar transcoder-0.0.1-SNAPSHOT.jar
+# By default exposing the port
 EXPOSE 9090
-# The application's jar file (when packaged)
-ARG JAR_FILE=target/transcoder-0.0.1-SNAPSHOT.jar
-# Add the application's jar to the container
-ADD ${JAR_FILE} transcoder-0.0.1-SNAPSHOT.jar
-# Run the jar file 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/transcoder-0.0.1-SNAPSHOT.jar"]
+# Executes when the docker image is run
+ENTRYPOINT ["java","-jar","transcoder-0.0.1-SNAPSHOT.jar"]
