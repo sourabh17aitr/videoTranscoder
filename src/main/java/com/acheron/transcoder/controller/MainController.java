@@ -25,7 +25,7 @@ public class MainController {
 	@RequestMapping("/")
 	public String hello() {
 		try {
-			generateVideoScreenShots("/tmp/my image","/tmp/sample2");
+			generateVideoScreenShots("/tmp/my image", "/tmp/sample2");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -35,7 +35,7 @@ public class MainController {
 
 	String ffMpegInitialCommandLineScript = " -y -i ";
 	String ffMpegEndCommandLineScript = " -ss 00:00:10 -vframes 1 ";
-	String videoUtilityExecutionDirectory = "/usr/bin/avconv";
+	String videoUtilityExecutionDirectory = "ffmpeg";
 	Storage storage = null;
 	private static String bucketName = "acheron_transcode_video";
 	String blobNames = "my image";
@@ -47,14 +47,15 @@ public class MainController {
 	 * @param inputPath
 	 * @param outputPath
 	 * @return Destination of the output file that got generated
-	 * @throws IOException 
-	 * @throws FileNotFoundException 
+	 * @throws IOException
+	 * @throws FileNotFoundException
 	 */
-	public String generateVideoScreenShots(String inputPath, String outputPath) throws FileNotFoundException, IOException {
+	public String generateVideoScreenShots(String inputPath, String outputPath)
+			throws FileNotFoundException, IOException {
 		if ((inputPath == null || outputPath == null) || (inputPath == "" || outputPath == "")) {
 			throw new IllegalArgumentException("Mandatory parameters missing for generateVideoScreenShots");
 		}
-		
+
 		GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream(jsonPath))
 				.createScoped(Lists.newArrayList("https://www.googleapis.com/auth/cloud-platform"));
 		storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
@@ -64,14 +65,14 @@ public class MainController {
 		for (Bucket bucket : buckets.iterateAll()) {
 			System.out.println(bucket.toString());
 			Blob blob = bucket.get(blobNames);
-			/*if(blob != null) {
+			if (blob != null) {
 				System.out.println(blob.getSelfLink());
 				System.out.println(blob.getMediaLink());
-			}*/
+			}
 		}
-		
+
 		// String videoUtilityExecutionDirectory = System.getenv("ffmpeg_home");
-		
+
 		// String[] commandArray = new String[] { "-y", "-i", inputPath, "-ss",
 		// "00:00:10", "-vframes", "1", outputPath };
 		List<String> commandList = new ArrayList<String>();
