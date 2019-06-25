@@ -64,8 +64,10 @@ public class MainController {
 		for (Bucket bucket : buckets.iterateAll()) {
 			System.out.println(bucket.toString());
 			Blob blob = bucket.get(blobNames);
-			System.out.println(blob.getSelfLink());
-			System.out.println(blob.getMediaLink());
+			/*if(blob != null) {
+				System.out.println(blob.getSelfLink());
+				System.out.println(blob.getMediaLink());
+			}*/
 		}
 		
 		// String videoUtilityExecutionDirectory = System.getenv("ffmpeg_home");
