@@ -25,7 +25,9 @@ public class MainController {
 	@RequestMapping("/")
 	public String hello() {
 		try {
-			generateVideoScreenShots("/tmp/my image", "/tmp/sample2");
+			String inputPath = "gs://acheron_transcode_video/sample.mp4";
+			String outputPath = "gs://acheron_transcode_video/sample1.mp4";
+			generateVideoScreenShots(inputPath, outputPath);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
