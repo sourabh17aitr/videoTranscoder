@@ -27,6 +27,10 @@ public class MainController {
 		try {
 			String inputPath = "gs://acheron_transcode_video/sample.mp4";
 			String outputPath = "gs://acheron_transcode_video/sample1.mp4";
+			/*
+			 * String inputPath = "C:\\Users\\Sourabh\\Pictures\\transcode\\sample.mp4";
+			 * String outputPath = "C:\\Users\\Sourabh\\Pictures\\transcode\\sample1.jpg";
+			 */
 			generateVideoScreenShots(inputPath, outputPath);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -37,7 +41,7 @@ public class MainController {
 
 	String ffMpegInitialCommandLineScript = " -y -i ";
 	String ffMpegEndCommandLineScript = " -ss 00:00:10 -vframes 1 ";
-	String videoUtilityExecutionDirectory = "ffmpeg";
+	String videoUtilityExecutionDirectory = "C:\\ffmpeg\\bin\\ffmpeg";
 	Storage storage = null;
 	private static String bucketName = "acheron_transcode_video";
 	String blobNames = "my image";
@@ -58,8 +62,7 @@ public class MainController {
 			throw new IllegalArgumentException("Mandatory parameters missing for generateVideoScreenShots");
 		}
 
-		GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream(jsonPath))
-				.createScoped(Lists.newArrayList("https://www.googleapis.com/auth/cloud-platform"));
+		GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream(jsonPath));
 		storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
 		System.out.println("credentials:" + credentials.toString());
 		System.out.println("Buckets:");
