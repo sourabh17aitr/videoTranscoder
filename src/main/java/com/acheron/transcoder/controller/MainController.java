@@ -23,19 +23,14 @@ import com.google.common.collect.Lists;
 public class MainController {
 
 	@RequestMapping("/")
-	public String hello() {
-		try {
-			String inputPath = "gs://acheron_transcode_video/sample.mp4";
-			String outputPath = "gs://acheron_transcode_video/sample1.mp4";
-			/*
-			 * String inputPath = "C:\\Users\\Sourabh\\Pictures\\transcode\\sample.mp4";
-			 * String outputPath = "C:\\Users\\Sourabh\\Pictures\\transcode\\sample1.jpg";
-			 */
-			generateVideoScreenShots(inputPath, outputPath);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public String hello() throws IOException {
+		String inputPath = "gs://acheron_transcode_video/sample.mp4";
+		String outputPath = "gs://acheron_transcode_video/sample1.mp4";
+		/*
+		 * String inputPath = "C:\\Users\\Sourabh\\Pictures\\transcode\\sample.mp4";
+		 * String outputPath = "C:\\Users\\Sourabh\\Pictures\\transcode\\sample1.jpg";
+		 */
+		//generateVideoScreenShots(inputPath, outputPath);
 		return "Hello Spring Boot!";
 	}
 
