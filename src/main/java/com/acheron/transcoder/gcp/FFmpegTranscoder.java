@@ -2,13 +2,12 @@ package com.acheron.transcoder.gcp;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -22,22 +21,23 @@ import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.collect.Lists;
-
 @Component
 public class FFmpegTranscoder {
 
 	Storage storage = null;
 	private static String bucketName = "acheron_transcode_video";
+	
+	
 
-	public void startTranscode(MultipartFile files) {
+	public void startTranscode(MultipartFile files) throws IllegalArgumentException {
 		try {
 			authExplicit("./crypto-hallway-244715-3b3f4d3e01b9.json");
 			byte[] fileByteArr = (files).getBytes();
-			uploadToGCP("my image", fileByteArr);
-			getFilePath("./crypto-hallway-244715-3b3f4d3e01b9.json", "my image");
-			
-			
-			generateVideoScreenShots("C:/Users/Sourabh/Pictures/transcode/y2mate.com - nature_beautiful_short_video_720p_hd_668nUCeBHyY_360p.mp4", "C:/Users/Sourabh/Pictures/transcode");
+			// uploadToGCP("my image", fileByteArr);
+			startVideoTranscode();
+			// getFilePath("./crypto-hallway-244715-3b3f4d3e01b9.json", "my image");
+
+			// generateVideoScreenShots("C:/Users/Sourabh/Pictures/transcode/sample.mp4","C:/Users/Sourabh/Pictures/transcode");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -63,7 +63,7 @@ public class FFmpegTranscoder {
 	public void uploadToGCP(String filePath, byte[] file) {
 		storage.create(BlobInfo.newBuilder(bucketName, filePath).build(), new ByteArrayInputStream(file));
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	public void getFilePath(String jsonPath, String blobNames) throws FileNotFoundException, IOException {
 		GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream(jsonPath))
@@ -94,7 +94,7 @@ public class FFmpegTranscoder {
 		if ((inputPath == null || outputPath == null) || (inputPath == "" || outputPath == "")) {
 			throw new IllegalArgumentException("Mandatory parameters missing for generateVideoScreenShots");
 		}
-		//String videoUtilityExecutionDirectory = System.getenv("ffmpeg_home");
+		// String videoUtilityExecutionDirectory = System.getenv("ffmpeg_home");
 		String videoUtilityExecutionDirectory = "/usr/bin/ffmpeg";
 		// String[] commandArray = new String[] { "-y", "-i", inputPath, "-ss",
 		// "00:00:10", "-vframes", "1", outputPath };
@@ -145,5 +145,11 @@ public class FFmpegTranscoder {
 		}
 
 		return "";
+	}
+
+	public void startVideoTranscode() throws IllegalArgumentException {
+
+		File source = new File("D:/Work/GCP/transcoder/videoTranscoder/asset/sample.mp4");
+		File target = new File("/transcoder/asset/sample2.avi");
 	}
 }
