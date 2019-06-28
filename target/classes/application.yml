@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: Transcoder
+  servlet:
+    multipart:
+      max-file-size: 500000MB
+      max-request-size: 500000MB
+server:
+  port: 7070
+logging:
+  path: Logs
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+    file: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n'
+  file: ${logging.path}\application.log
+  level:
+    org.springframework: ERROR
+    com.acheron: DEBUG
+      

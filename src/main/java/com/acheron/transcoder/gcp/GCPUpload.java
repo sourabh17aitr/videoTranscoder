@@ -37,8 +37,11 @@ public class GCPUpload {
 
 	public void uploadFile(byte[] file, String fileName) {
 		try {
+			log.debug("GCP Authentication");
 			authExplicit();
+			log.debug("GCP Upload");
 			uploadToGCP(fileName, file);
+			log.debug("GCP Upload is done");
 		} catch (IOException e) {
 			log.error("Exception is" + e);
 			e.printStackTrace();
@@ -50,9 +53,9 @@ public class GCPUpload {
 		GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream(GCPUserTokenPath));
 
 		storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
-		/*log.error("credentials:" + credentials.toString());
-		log.error("Buckets:");*/
-		System.out.println("credentials:" + credentials.toString());
+		log.debug("credentials:" + credentials.toString());
+		log.debug("Buckets:");
+		//System.out.println("credentials:" + credentials.toString());
 
 		Page<Bucket> buckets = storage.list();
 		for (Bucket bucket : buckets.iterateAll()) {

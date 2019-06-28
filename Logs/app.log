@@ -1,0 +1,10 @@
+2019-06-28 13:22:48,516 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 9928 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
+2019-06-28 13:22:48,517 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-06-28 13:22:48,518 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:22:50,479 INFO com.acheron.transcoder.TranscoderApplication [main] Started TranscoderApplication in 2.271 seconds (JVM running for 2.712)
+2019-06-28 13:22:54,283 DEBUG com.acheron.transcoder.workflow.Workflow [http-nio-7070-exec-2] Multipart file converted to file object
+2019-06-28 13:23:27,365 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 5736 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
+2019-06-28 13:23:27,366 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-06-28 13:23:27,367 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-06-28 13:23:29,362 INFO com.acheron.transcoder.TranscoderApplication [main] Started TranscoderApplication in 2.304 seconds (JVM running for 2.753)
+2019-06-28 13:23:42,034 DEBUG com.acheron.transcoder.workflow.Workflow [http-nio-7070-exec-3] Multipart file converted to file object

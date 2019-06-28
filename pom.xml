@@ -12,7 +12,7 @@
 	<groupId>com.acheron</groupId>
 	<artifactId>transcoder</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>transcoder</name>
+	<name>Transcoder</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -38,6 +38,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>5.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.jayway.jsonpath</groupId>
@@ -68,7 +73,6 @@
 			<artifactId>jcodec-javase</artifactId>
 			<version>0.2.3</version>
 		</dependency>
-
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>

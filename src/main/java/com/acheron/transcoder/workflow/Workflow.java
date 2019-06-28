@@ -8,7 +8,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.jcodec.api.FrameGrab;
 import org.jcodec.api.JCodecException;
 import org.jcodec.common.model.Picture;
@@ -22,7 +23,8 @@ import com.acheron.transcoder.gcp.GCPUpload;
 
 @Component
 public class Workflow {
-	final static Logger log = Logger.getLogger(Workflow.class);
+	//final static Logger log = Logger.getLogger(Workflow.class);
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	GCPUpload gcpUpload;
@@ -31,6 +33,7 @@ public class Workflow {
 		try {
 			//byte[] videoFileByteArr = (videofile).getBytes();
 			byte[] imageFileByteArr = startTranscode(videofile);
+			log.debug("file transcode is done");
 			gcpUpload.uploadFile(imageFileByteArr, imageName);
 		} catch (IOException | JCodecException e) {
 			log.error("Exception is" + e);
@@ -56,6 +59,7 @@ public class Workflow {
 	public File convert(MultipartFile file) throws IOException {
 		File convFile = new File(System.getProperty("java.io.tmpdir")+"/"+"test.mp4");
 		file.transferTo(convFile);
+		log.debug("Converting Multipart file converted to file object");
 	    return convFile;
 		/*convFile.createNewFile();
 		FileOutputStream fos = new FileOutputStream(convFile);
