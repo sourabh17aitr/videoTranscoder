@@ -48,17 +48,20 @@ public class Workflow {
 		System.out.println(file.getName());
 		//ImageIO.write(bufferedImage, "png", new File("C:/Users/Sourabh/Pictures/transcode/news.png"));
 		byte[] imageInByte = getImageInByte(bufferedImage);
+		//file.deleteOnExit();
 		return imageInByte;
 
 	}
 
 	public File convert(MultipartFile file) throws IOException {
-		File convFile = new File(file.getOriginalFilename());
-		convFile.createNewFile();
+		File convFile = new File(System.getProperty("java.io.tmpdir")+"/"+"test.mp4");
+		file.transferTo(convFile);
+	    return convFile;
+		/*convFile.createNewFile();
 		FileOutputStream fos = new FileOutputStream(convFile);
 		fos.write(file.getBytes());
-		fos.close();
-		return convFile;
+		fos.close();*/
+		//return convFile;
 	}
 
 	public byte[] getImageInByte(BufferedImage bufferedImage) throws IOException {
