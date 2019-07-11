@@ -4,5 +4,6 @@ FROM openjdk:jdk-alpine
 ADD target/transcoder-0.0.1-SNAPSHOT.jar transcoder-0.0.1-SNAPSHOT.jar
 # By default exposing the port
 EXPOSE 9090
+COPY crypto-hallway-244715-3b3f4d3e01b9.json /transcoder/crypto-hallway-244715-3b3f4d3e01b9.json
 # Executes when the docker image is run
 ENTRYPOINT ["java","-jar","transcoder-0.0.1-SNAPSHOT.jar"]

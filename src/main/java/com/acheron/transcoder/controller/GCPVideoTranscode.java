@@ -40,7 +40,7 @@ public class GCPVideoTranscode {
 	// private static String GCPUserTokenPath =
 	// "/transcoder/file/GCPUserToken.json";
 
-	private static String GCPUserTokenPath = "/crypto-hallway-244715-3b3f4d3e01b9.json";
+	private static String GCPUserTokenPath = "/transcoder/crypto-hallway-244715-3b3f4d3e01b9.json";
 
 	@PostMapping("startVideoTranscode")
 	public String startVideoTranscodeWorkflow(@RequestParam(value = "fileName", required = true) String fileName)
