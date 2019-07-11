@@ -7,7 +7,6 @@ spring:
       max-request-size: 500000MB
 server:
   port: 7070
-  address: 192.168.1.51
 logging:
   path: Logs
   pattern:
