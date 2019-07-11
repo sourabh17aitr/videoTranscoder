@@ -49,3 +49,11 @@ Verify the connector's configuration, identify and stop any process that's liste
 2019-07-11 22:13:26,690 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
 2019-07-11 22:13:26,690 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
 2019-07-11 22:13:28,545 INFO com.acheron.transcoder.TranscoderApplication [main] Started TranscoderApplication in 2.144 seconds (JVM running for 2.548)
+2019-07-11 22:18:19,270 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 10796 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
+2019-07-11 22:18:19,271 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-11 22:18:19,272 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-11 22:18:21,208 INFO com.acheron.transcoder.TranscoderApplication [main] Started TranscoderApplication in 2.234 seconds (JVM running for 2.648)
+2019-07-11 23:46:39,894 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 18528 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
+2019-07-11 23:46:39,898 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-11 23:46:39,899 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-11 23:46:43,701 INFO com.acheron.transcoder.TranscoderApplication [main] Started TranscoderApplication in 4.35 seconds (JVM running for 5.22)
