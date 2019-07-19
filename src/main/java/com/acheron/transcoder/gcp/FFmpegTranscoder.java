@@ -95,7 +95,7 @@ public class FFmpegTranscoder {
 			throw new IllegalArgumentException("Mandatory parameters missing for generateVideoScreenShots");
 		}
 		// String videoUtilityExecutionDirectory = System.getenv("ffmpeg_home");
-		String videoUtilityExecutionDirectory = "/usr/bin/ffmpeg";
+		String videoUtilityExecutionDirectory = "ffmpeg";
 		// String[] commandArray = new String[] { "-y", "-i", inputPath, "-ss",
 		// "00:00:10", "-vframes", "1", outputPath };
 		List<String> commandList = new ArrayList<String>();
@@ -109,7 +109,7 @@ public class FFmpegTranscoder {
 		commandList.add("1");
 		commandList.add(outputPath);
 
-		String executionCommand = ffMpegInitialCommandLineScript + "'" + inputPath + "'" + ffMpegEndCommandLineScript
+		String executionCommand = ffMpegInitialCommandLineScript + inputPath + ffMpegEndCommandLineScript
 				+ "'" + outputPath + "'";
 		executionCommand = videoUtilityExecutionDirectory + executionCommand;
 		System.out.println("Command  is a " + executionCommand);
