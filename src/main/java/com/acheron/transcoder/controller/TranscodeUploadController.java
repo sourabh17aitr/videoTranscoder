@@ -1,8 +1,14 @@
 package com.acheron.transcoder.controller;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 
 import org.apache.log4j.Logger;
+import org.apache.tools.ant.util.FileUtils;
 import org.jcodec.api.JCodecException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,8 +56,20 @@ public class TranscodeUploadController {
 		return "Success";
 	}*/
 	@GetMapping
-	public String startTranscode() {
-		ffmpegTranscoder.generateVideoScreenShots("http://www.jell.yfish.us/media/jellyfish-20-mbps-hd-hevc-10bit.mkv", "thumb.jpg");
+	public String startTranscode() throws IOException {
+		Path inputPathPath = download("http://www.jell.yfish.us/media/jellyfish-20-mbps-hd-hevc-10bit.mkv", "/usr/bin/thumb.jpg");
+		System.out.println("Video input path" + inputPathPath);
+		ffmpegTranscoder.generateVideoScreenShots("http://www.jell.yfish.us/media/jellyfish-20-mbps-hd-hevc-10bit.mkv", "/usr/bin/thumb.jpg");
 		return "video transcoded";
+	}
+	
+	private Path download(String sourceURL, String targetDirectory) throws IOException
+	{
+	    URL url = new URL(sourceURL);
+	    String fileName = sourceURL.substring(sourceURL.lastIndexOf('/') + 1, sourceURL.length());
+	    Path targetPath = new File(targetDirectory + File.separator + fileName).toPath();
+	    Files.copy(url.openStream(), targetPath, StandardCopyOption.REPLACE_EXISTING);
+
+	    return targetPath;
 	}
 }
