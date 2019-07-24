@@ -1,7 +1,41 @@
-2019-07-24 14:44:27,887 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 25044 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
-2019-07-24 14:44:27,890 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 14:44:27,891 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 14:44:28,642 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+2019-07-25 03:49:42,147 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 16468 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 03:49:42,152 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 03:49:42,153 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 03:49:44,198 INFO com.acheron.transcoder.TranscoderApplication [main] Started TranscoderApplication in 2.569 seconds (JVM running for 4.611)
+2019-07-25 03:50:24,471 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 22852 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 03:50:24,476 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 03:50:24,476 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 03:50:26,462 ERROR org.apache.catalina.util.LifecycleBase [main] Failed to start component [Connector[HTTP/1.1-7070]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:296)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.acheron.transcoder.TranscoderApplication.main(TranscoderApplication.java:16)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+2019-07-25 03:50:26,486 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
 
 ***************************
 APPLICATION FAILED TO START
@@ -9,20 +43,46 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
+The Tomcat connector configured to listen on port 7070 failed to start. The port may already be in use or the connector may be misconfigured.
 
 Action:
 
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
+Verify the connector's configuration, identify and stop any process that's listening on port 7070, or configure this application to listen on another port.
 
-2019-07-24 14:44:47,400 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 15188 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
-2019-07-24 14:44:47,401 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 14:44:47,401 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 14:44:48,102 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+2019-07-25 03:50:54,434 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 22664 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 03:50:54,436 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 03:50:54,436 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 03:50:56,374 ERROR org.apache.catalina.util.LifecycleBase [main] Failed to start component [Connector[HTTP/1.1-7070]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:296)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.acheron.transcoder.TranscoderApplication.main(TranscoderApplication.java:16)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+2019-07-25 03:50:56,389 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
 
 ***************************
 APPLICATION FAILED TO START
@@ -30,20 +90,46 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
+The Tomcat connector configured to listen on port 7070 failed to start. The port may already be in use or the connector may be misconfigured.
 
 Action:
 
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
+Verify the connector's configuration, identify and stop any process that's listening on port 7070, or configure this application to listen on another port.
 
-2019-07-24 14:44:58,877 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 4200 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
-2019-07-24 14:44:58,878 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 14:44:58,878 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 14:44:59,594 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+2019-07-25 03:51:44,341 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 26012 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 03:51:44,343 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 03:51:44,343 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 03:51:45,879 ERROR org.apache.catalina.util.LifecycleBase [main] Failed to start component [Connector[HTTP/1.1-7070]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:296)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.acheron.transcoder.TranscoderApplication.main(TranscoderApplication.java:16)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+2019-07-25 03:51:45,900 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
 
 ***************************
 APPLICATION FAILED TO START
@@ -51,20 +137,46 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
+The Tomcat connector configured to listen on port 7070 failed to start. The port may already be in use or the connector may be misconfigured.
 
 Action:
 
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
+Verify the connector's configuration, identify and stop any process that's listening on port 7070, or configure this application to listen on another port.
 
-2019-07-24 14:45:10,361 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 11956 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
-2019-07-24 14:45:10,362 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 14:45:10,362 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 14:45:11,045 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
+2019-07-25 03:52:31,901 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 13996 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 03:52:31,903 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 03:52:31,904 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 03:52:33,799 ERROR org.apache.catalina.util.LifecycleBase [main] Failed to start component [Connector[HTTP/1.1-7070]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:296)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.acheron.transcoder.TranscoderApplication.main(TranscoderApplication.java:16)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 14 common frames omitted
+2019-07-25 03:52:33,815 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
 
 ***************************
 APPLICATION FAILED TO START
@@ -72,483 +184,289 @@ APPLICATION FAILED TO START
 
 Description:
 
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
+The Tomcat connector configured to listen on port 7070 failed to start. The port may already be in use or the connector may be misconfigured.
 
 Action:
 
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 14:45:46,137 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 18888 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
-2019-07-24 14:45:46,139 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 14:45:46,139 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 14:45:46,826 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 14:47:36,083 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 19324 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
-2019-07-24 14:47:36,084 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 14:47:36,085 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 14:47:36,779 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 14:48:52,699 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 9460 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
-2019-07-24 14:48:52,700 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 14:48:52,701 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 14:48:53,386 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 14:49:13,404 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 4204 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
-2019-07-24 14:49:13,406 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 14:49:13,406 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 14:49:14,117 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 14:49:43,282 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 7772 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
-2019-07-24 14:49:43,283 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 14:49:43,284 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 14:49:43,974 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 14:50:16,415 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 14876 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
-2019-07-24 14:50:16,417 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 14:50:16,417 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 14:50:17,100 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 14:51:36,420 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 27576 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
-2019-07-24 14:51:36,421 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 14:51:36,421 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 14:51:37,099 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:06:40,598 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 25748 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:06:40,600 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:06:40,600 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:06:42,129 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:07:41,654 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 16588 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:07:41,656 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:07:41,656 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:07:43,195 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:07:50,793 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 22812 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:07:50,794 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:07:50,794 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:07:51,482 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:08:12,564 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 22468 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:08:12,565 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:08:12,565 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:08:13,245 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:09:52,289 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 22000 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:09:52,290 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:09:52,291 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:09:52,991 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:10:18,217 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 3016 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:10:18,218 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:10:18,219 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:10:18,908 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:11:10,688 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 22952 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:11:10,689 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:11:10,690 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:11:12,246 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:11:29,443 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 12292 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:11:29,444 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:11:29,444 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:11:30,172 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:13:32,523 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 23076 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:13:32,524 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:13:32,525 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:13:33,219 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:14:02,322 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 17620 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:14:02,323 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:14:02,323 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:14:03,001 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:19:58,862 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 13884 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:19:58,863 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:19:58,864 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:19:59,569 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:29:22,456 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 11272 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:29:22,457 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:29:22,458 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:29:24,106 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:29:48,199 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 6108 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:29:48,200 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:29:48,200 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:29:48,879 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:31:17,841 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 16780 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:31:17,842 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:31:17,843 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:31:18,535 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:32:11,503 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 16400 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:32:11,504 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:32:11,505 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:32:12,206 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter [main] 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Field gcpUploadService in com.acheron.transcoder.controller.TranscodeUploadController required a bean of type 'com.acheron.transcoder.service.GCPUploadService' that could not be found.
-
-The injection point has the following annotations:
-	- @org.springframework.beans.factory.annotation.Autowired(required=true)
-
-
-Action:
-
-Consider defining a bean of type 'com.acheron.transcoder.service.GCPUploadService' in your configuration.
-
-2019-07-24 15:40:43,231 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 2992 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:40:43,232 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:40:43,233 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:40:44,166 INFO com.acheron.transcoder.TranscoderApplication [main] Started TranscoderApplication in 1.138 seconds (JVM running for 2.074)
-2019-07-24 15:41:10,685 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 18436 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
-2019-07-24 15:41:10,686 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
-2019-07-24 15:41:10,686 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
-2019-07-24 15:41:11,568 INFO com.acheron.transcoder.TranscoderApplication [main] Started TranscoderApplication in 1.087 seconds (JVM running for 2.007)
+Verify the connector's configuration, identify and stop any process that's listening on port 7070, or configure this application to listen on another port.
+
+2019-07-25 03:57:47,938 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 25972 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 03:57:47,941 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 03:57:47,941 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 03:57:48,282 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.acheron.transcoder.TranscoderApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.acheron.transcoder.TranscoderApplication.main(TranscoderApplication.java:11)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	... 13 common frames omitted
+2019-07-25 03:58:08,821 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 16424 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 03:58:08,823 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 03:58:08,824 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 03:58:09,212 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.acheron.transcoder.TranscoderApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.acheron.transcoder.TranscoderApplication.main(TranscoderApplication.java:11)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	... 13 common frames omitted
+2019-07-25 03:59:05,896 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 23800 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 03:59:05,898 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 03:59:05,900 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 03:59:06,430 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.acheron.transcoder.TranscoderApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.acheron.transcoder.TranscoderApplication.main(TranscoderApplication.java:11)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	... 13 common frames omitted
+2019-07-25 04:00:13,708 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 27244 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 04:00:13,710 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 04:00:13,711 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 04:00:14,117 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.acheron.transcoder.TranscoderApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.acheron.transcoder.TranscoderApplication.main(TranscoderApplication.java:11)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	... 13 common frames omitted
+2019-07-25 04:00:42,522 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 25744 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 04:00:42,525 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 04:00:42,526 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 04:00:42,899 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.acheron.transcoder.TranscoderApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.acheron.transcoder.TranscoderApplication.main(TranscoderApplication.java:11)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	... 13 common frames omitted
+2019-07-25 04:00:55,218 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 16264 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 04:00:55,220 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 04:00:55,221 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 04:00:55,641 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.acheron.transcoder.TranscoderApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.acheron.transcoder.TranscoderApplication.main(TranscoderApplication.java:11)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	... 13 common frames omitted
+2019-07-25 04:02:27,680 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 24804 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 04:02:27,683 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 04:02:27,683 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 04:02:28,102 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.acheron.transcoder.TranscoderApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.acheron.transcoder.TranscoderApplication.main(TranscoderApplication.java:11)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	... 13 common frames omitted
+2019-07-25 04:03:20,918 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 2584 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 04:03:20,920 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 04:03:20,920 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 04:03:21,384 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.acheron.transcoder.TranscoderApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.acheron.transcoder.TranscoderApplication.main(TranscoderApplication.java:11)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	... 13 common frames omitted
+2019-07-25 04:03:53,284 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 8668 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 04:03:53,288 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 04:03:53,289 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 04:03:53,815 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.acheron.transcoder.TranscoderApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.acheron.transcoder.TranscoderApplication.main(TranscoderApplication.java:11)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	... 13 common frames omitted
+2019-07-25 04:04:36,777 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 2400 (D:\Work\GCP\transcoder(git)\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder(git)\videoTranscoder)
+2019-07-25 04:04:36,779 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-25 04:04:36,779 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-25 04:04:37,046 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.acheron.transcoder.TranscoderApplication]; nested exception is org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:315)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:232)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:275)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:95)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:705)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:531)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:742)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:389)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1213)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1202)
+	at com.acheron.transcoder.TranscoderApplication.main(TranscoderApplication.java:11)
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'FFmpegTranscoder' for bean class [com.acheron.transcoder.service.FFmpegTranscoder] conflicts with existing, non-compatible bean definition of same name and class [com.acheron.transcoder.gcp.FFmpegTranscoder]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:348)
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:286)
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:132)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:287)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:242)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:199)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167)
+	... 13 common frames omitted

@@ -1,30 +1,10 @@
 package com.acheron.transcoder.gcp;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.stereotype.Component;
-import org.springframework.web.multipart.MultipartFile;
 
-import com.google.api.gax.paging.Page;
-import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.Bucket;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
-import com.google.common.collect.Lists;
-@Component
 public class FFmpegTranscoder {
 
-	Storage storage = null;
+	/*Storage storage = null;
 	private static String bucketName = "acheron_transcode_video";
 	
 	
@@ -83,13 +63,13 @@ public class FFmpegTranscoder {
 	String ffMpegInitialCommandLineScript = " -y -i ";
 	String ffMpegEndCommandLineScript = " -ss 00:00:10 -vframes 1 ";
 
-	/**
+	*//**
 	 * Captures a screen from a video and convert it to an image format.
 	 * 
 	 * @param inputPath
 	 * @param outputPath
 	 * @return Destination of the output file that got generated
-	 */
+	 *//*
 	public String generateVideoScreenShots(String inputPath, String outputPath) {
 		if ((inputPath == null || outputPath == null) || (inputPath == "" || outputPath == "")) {
 			throw new IllegalArgumentException("Mandatory parameters missing for generateVideoScreenShots");
@@ -106,7 +86,7 @@ public class FFmpegTranscoder {
 		commandList.add("-ss");
 		commandList.add("00:00:10");
 		commandList.add("-vframes");
-		commandList.add("1");
+		commandList.add("70");
 		commandList.add(outputPath);
 
 		String executionCommand = ffMpegInitialCommandLineScript + inputPath + ffMpegEndCommandLineScript
@@ -151,5 +131,5 @@ public class FFmpegTranscoder {
 
 		File source = new File("D:/Work/GCP/transcoder/videoTranscoder/asset/sample.mp4");
 		File target = new File("/transcoder/asset/sample2.avi");
-	}
+	}*/
 }

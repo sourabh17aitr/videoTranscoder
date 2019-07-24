@@ -6,7 +6,7 @@ spring:
       max-file-size: 500000MB
       max-request-size: 500000MB
 server:
-  port: 7070
+  port: 7077
 logging:
   path: Logs
   pattern:

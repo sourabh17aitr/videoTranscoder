@@ -1,8 +1,9 @@
 com\acheron\transcoder\controller\MainController.class
-com\acheron\transcoder\workflow\Workflow.class
-com\acheron\transcoder\service\GCPUploadService.class
 com\acheron\transcoder\gcp\GCPUpload.class
 com\acheron\transcoder\controller\TranscodeUploadController.class
 com\acheron\transcoder\TranscoderApplication.class
+com\acheron\transcoder\service\FFmpegTranscoder.class
 com\acheron\transcoder\gcp\FFmpegTranscoder.class
 com\acheron\transcoder\controller\GCPVideoTranscode.class
+com\acheron\transcoder\workflow\Workflow.class
+com\acheron\transcoder\service\GCPUploadService.class

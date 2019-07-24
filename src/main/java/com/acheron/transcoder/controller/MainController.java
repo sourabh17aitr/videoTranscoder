@@ -1,36 +1,18 @@
 package com.acheron.transcoder.controller;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.google.api.gax.paging.Page;
-import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.Bucket;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
 
 @RestController
 public class MainController {
 
-	@RequestMapping("/")
+	/*@RequestMapping("/")
 	public String hello() throws IOException {
 		String inputPath = "gs://acheron_transcode_video/sample.mp4";
 		String outputPath = "gs://acheron_transcode_video/sample1.mp4";
-		/*
+		
 		 * String inputPath = "C:\\Users\\Sourabh\\Pictures\\transcode\\sample.mp4";
 		 * String outputPath = "C:\\Users\\Sourabh\\Pictures\\transcode\\sample1.jpg";
-		 */
+		 
 		//generateVideoScreenShots(inputPath, outputPath);
 		return "Hello Spring Boot!";
 	}
@@ -43,7 +25,7 @@ public class MainController {
 	String blobNames = "my image";
 	String jsonPath = "./crypto-hallway-244715-3b3f4d3e01b9.json";
 
-	/**
+	*//**
 	 * Captures a screen from a video and convert it to an image format.
 	 * 
 	 * @param inputPath
@@ -51,7 +33,7 @@ public class MainController {
 	 * @return Destination of the output file that got generated
 	 * @throws IOException
 	 * @throws FileNotFoundException
-	 */
+	 *//*
 	public String generateVideoScreenShots(String inputPath, String outputPath)
 			throws FileNotFoundException, IOException {
 		if ((inputPath == null || outputPath == null) || (inputPath == "" || outputPath == "")) {
@@ -125,5 +107,5 @@ public class MainController {
 		}
 
 		return "";
-	}
+	}*/
 }

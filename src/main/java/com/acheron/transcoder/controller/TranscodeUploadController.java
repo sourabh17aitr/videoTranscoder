@@ -6,26 +6,21 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.time.LocalTime;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.acheron.transcoder.gcp.FFmpegTranscoder;
+import com.acheron.transcoder.service.FFmpegTranscoder;
 import com.acheron.transcoder.service.GCPUploadService;
-import com.acheron.transcoder.workflow.Workflow;
 
 
 @RestController
 @RequestMapping("transcode/")
 public class TranscodeUploadController {
-
-	@Autowired
-	Workflow workflow;
-	final static Logger log = Logger.getLogger(TranscodeUploadController.class);
 	
 	@Autowired
 	FFmpegTranscoder ffmpegTranscoder;
@@ -33,8 +28,8 @@ public class TranscodeUploadController {
 	@Autowired
 	GCPUploadService gcpUploadService;
 	
-	@PostMapping("transcode")
-	public String transcode(@RequestParam(value = "videoFilePath", required = true) String videoFilePath) throws IOException {
+	@PostMapping("transcodeByPath")
+	public String transcodeByPath(@RequestParam(value = "videoFilePath", required = true) String videoFilePath) throws IOException {
 		doTranscode(videoFilePath);
 		return "video transcoded";
 	}
@@ -46,11 +41,13 @@ public class TranscodeUploadController {
 	}
 	
 	public void doTranscode(String videoPath) throws IOException {
-		Path inputPathPath = download(videoPath, "/usr/bin");
+		Path inputPathPath = download(videoPath, "/usr/bin/");
 		System.out.println("Video input path" + inputPathPath);
-		ffmpegTranscoder.generateVideoScreenShots(inputPathPath.toString(), "/usr/bin/thumb.jpg");
+		LocalTime time = LocalTime.now();
+		String fileName = "/usr/bin/thumb_"+time+".jpg";
+		ffmpegTranscoder.generateVideoScreenShots(inputPathPath.toString(), fileName);
 		System.out.println("Uploading Image");
-		gcpUploadService.uploadImageFile("/usr/bin/thumb.jpg");
+		gcpUploadService.uploadImageFile(fileName);
 	}
 	
 	private Path download(String sourceURL, String targetDirectory) throws IOException

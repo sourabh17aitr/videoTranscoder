@@ -1,25 +1,11 @@
 package com.acheron.transcoder.gcp;
 
-import java.io.ByteArrayInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.concurrent.CompletableFuture;
-
-import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
-import org.springframework.web.multipart.MultipartFile;
-
-import com.google.api.gax.paging.Page;
-import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.Bucket;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
 
 @Component
 public class GCPUpload {
 
-	final static Logger log = Logger.getLogger(GCPUpload.class);
+	/*final static Logger log = Logger.getLogger(GCPUpload.class);
 
 	Storage storage = null;
 	private static String bucketName = "acheron_transcode_video";
@@ -68,5 +54,5 @@ public class GCPUpload {
 	public CompletableFuture<Boolean> uploadToGCP(String filePath, byte[] file) {
 		storage.create(BlobInfo.newBuilder(bucketName, filePath).build(), new ByteArrayInputStream(file));
 		return CompletableFuture.completedFuture(true);
-	}
+	}*/
 }

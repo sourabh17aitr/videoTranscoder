@@ -1,30 +1,12 @@
 package com.acheron.transcoder.workflow;
 
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.jcodec.api.FrameGrab;
-import org.jcodec.api.JCodecException;
-import org.jcodec.common.model.Picture;
-import org.jcodec.scale.AWTUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.multipart.MultipartFile;
-
-import com.acheron.transcoder.gcp.GCPUpload;
 
 
 @Component
 public class Workflow {
 	//final static Logger log = Logger.getLogger(Workflow.class);
-	private final Logger log = LoggerFactory.getLogger(this.getClass());
+	/*private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	GCPUpload gcpUpload;
@@ -61,10 +43,10 @@ public class Workflow {
 		file.transferTo(convFile);
 		log.debug("Converting Multipart file converted to file object");
 	    return convFile;
-		/*convFile.createNewFile();
+		convFile.createNewFile();
 		FileOutputStream fos = new FileOutputStream(convFile);
 		fos.write(file.getBytes());
-		fos.close();*/
+		fos.close();
 		//return convFile;
 	}
 
@@ -75,6 +57,6 @@ public class Workflow {
 		byte[] imageInByte = baos.toByteArray();
 		baos.close();
 		return imageInByte;
-	}
+	}*/
 
 }
