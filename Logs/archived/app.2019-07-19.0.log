@@ -1,0 +1,24 @@
+2019-07-19 14:24:45,114 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 5600 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
+2019-07-19 14:24:45,119 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-19 14:24:45,119 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-19 14:24:47,001 INFO com.acheron.transcoder.TranscoderApplication [main] Started TranscoderApplication in 2.19 seconds (JVM running for 2.598)
+2019-07-19 14:28:40,233 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 14852 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
+2019-07-19 14:28:40,238 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-19 14:28:40,238 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-19 14:28:42,076 INFO com.acheron.transcoder.TranscoderApplication [main] Started TranscoderApplication in 2.137 seconds (JVM running for 2.538)
+2019-07-19 14:31:54,003 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 12088 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
+2019-07-19 14:31:54,003 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-19 14:31:54,003 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-19 14:31:55,849 INFO com.acheron.transcoder.TranscoderApplication [main] Started TranscoderApplication in 2.127 seconds (JVM running for 2.508)
+2019-07-19 14:35:55,390 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 1764 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
+2019-07-19 14:35:55,391 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-19 14:35:55,392 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-19 14:35:57,265 INFO com.acheron.transcoder.TranscoderApplication [main] Started TranscoderApplication in 2.159 seconds (JVM running for 2.565)
+2019-07-19 14:37:47,045 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 5408 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
+2019-07-19 14:37:47,046 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-19 14:37:47,046 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-19 14:37:48,878 INFO com.acheron.transcoder.TranscoderApplication [main] Started TranscoderApplication in 2.114 seconds (JVM running for 2.537)
+2019-07-19 14:38:28,382 INFO com.acheron.transcoder.TranscoderApplication [main] Starting TranscoderApplication on Sourabh with PID 18540 (D:\Work\GCP\transcoder\videoTranscoder\target\classes started by Sourabh in D:\Work\GCP\transcoder\videoTranscoder)
+2019-07-19 14:38:28,383 DEBUG com.acheron.transcoder.TranscoderApplication [main] Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+2019-07-19 14:38:28,383 INFO com.acheron.transcoder.TranscoderApplication [main] No active profile set, falling back to default profiles: default
+2019-07-19 14:38:30,211 INFO com.acheron.transcoder.TranscoderApplication [main] Started TranscoderApplication in 2.111 seconds (JVM running for 2.499)

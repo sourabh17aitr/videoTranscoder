@@ -24,6 +24,7 @@ import com.acheron.transcoder.workflow.Workflow;
 
 
 @RestController
+@RequestMapping("transcode/")
 public class TranscodeUploadController {
 
 	@Autowired
@@ -36,7 +37,7 @@ public class TranscodeUploadController {
 	@Autowired
 	GCPUploadService gcpUploadService;
 	
-	@PostMapping("ranscode")
+	@PostMapping("transcode")
 	public String transcode(@RequestParam(value = "videoFilePath", required = true) String videoFilePath) throws IOException {
 		doTranscode(videoFilePath);
 		return "video transcoded";
@@ -48,13 +49,12 @@ public class TranscodeUploadController {
 		return "video transcoded";
 	}
 	
-	public String doTranscode(String videoPath) throws IOException {
+	public void doTranscode(String videoPath) throws IOException {
 		Path inputPathPath = download(videoPath, "/usr/bin");
 		System.out.println("Video input path" + inputPathPath);
 		ffmpegTranscoder.generateVideoScreenShots(inputPathPath.toString(), "/usr/bin/thumb.jpg");
 		System.out.println("Uploading Image");
 		gcpUploadService.uploadImageFile("/usr/bin/thumb.jpg");
-		return "video transcoded";
 	}
 	
 	private Path download(String sourceURL, String targetDirectory) throws IOException
