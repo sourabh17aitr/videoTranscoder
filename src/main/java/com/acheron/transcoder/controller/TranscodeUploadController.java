@@ -8,16 +8,12 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 
 import org.apache.log4j.Logger;
-import org.apache.tools.ant.util.FileUtils;
-import org.jcodec.api.JCodecException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
-
 import com.acheron.transcoder.gcp.FFmpegTranscoder;
 import com.acheron.transcoder.service.GCPUploadService;
 import com.acheron.transcoder.workflow.Workflow;
