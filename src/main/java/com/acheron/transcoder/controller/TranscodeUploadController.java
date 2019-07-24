@@ -57,9 +57,9 @@ public class TranscodeUploadController {
 	}*/
 	@GetMapping
 	public String startTranscode() throws IOException {
-		Path inputPathPath = download("http://www.jell.yfish.us/media/jellyfish-20-mbps-hd-hevc-10bit.mkv", "/usr/bin/thumb.jpg");
+		Path inputPathPath = download("http://www.jell.yfish.us/media/jellyfish-20-mbps-hd-hevc-10bit.mkv", "/usr/bin");
 		System.out.println("Video input path" + inputPathPath);
-		ffmpegTranscoder.generateVideoScreenShots("http://www.jell.yfish.us/media/jellyfish-20-mbps-hd-hevc-10bit.mkv", "/usr/bin/thumb.jpg");
+		ffmpegTranscoder.generateVideoScreenShots(inputPathPath.toString(), "/usr/bin/thumb.jpg");
 		return "video transcoded";
 	}
 	
