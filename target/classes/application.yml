@@ -16,4 +16,6 @@ logging:
   level:
     org.springframework: ERROR
     com.acheron: DEBUG
-      
+
+GCPUserTokenPath: /transcoder/crypto-hallway-244715-3b3f4d3e01b9.json
+GCPBUCKETNAME: acheron_transcode_video

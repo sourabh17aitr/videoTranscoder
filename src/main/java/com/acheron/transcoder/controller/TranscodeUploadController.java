@@ -19,11 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.acheron.transcoder.gcp.FFmpegTranscoder;
+import com.acheron.transcoder.service.GCPUploadService;
 import com.acheron.transcoder.workflow.Workflow;
 
 
 @RestController
-@RequestMapping("startVideoTranscode")
 public class TranscodeUploadController {
 
 	@Autowired
@@ -33,33 +33,27 @@ public class TranscodeUploadController {
 	@Autowired
 	FFmpegTranscoder ffmpegTranscoder;
 	
-	/*@PostMapping
-	public String startVideoTranscode(@RequestParam("files") MultipartFile file,
-			@RequestParam(value = "assetId", required = true) String assetId,
-			@RequestParam(value = "fileName", required = true) String fileName,
-			@RequestParam(value = "userId", required = false) String userId,
-			@RequestParam(value = "parentFolderId", required = false) String parentFolderId,
-			@RequestParam(value = "metadata", required = false) String metadataRaw)
-			throws IllegalAccessException, IOException, IllegalArgumentException {
-
-		if (assetId == null || assetId == "" || assetId.isEmpty()) {
-			throw new IllegalArgumentException("Mandatory Parameters missing, tenantId");
-		}
-		System.out.println(assetId + fileName);
-		
-		try {
-			workflow.startWorkflow(file, fileName);
-		} catch (JCodecException e) {
-			log.error("Exception is" + e);
-			e.printStackTrace();
-		}
-		return "Success";
-	}*/
-	@GetMapping
+	@Autowired
+	GCPUploadService gcpUploadService;
+	
+	@PostMapping("ranscode")
+	public String transcode(@RequestParam(value = "videoFilePath", required = true) String videoFilePath) throws IOException {
+		doTranscode(videoFilePath);
+		return "video transcoded";
+	}
+	
+	@GetMapping("startVideoTranscode")
 	public String startTranscode() throws IOException {
-		Path inputPathPath = download("http://www.jell.yfish.us/media/jellyfish-20-mbps-hd-hevc-10bit.mkv", "/usr/bin");
+		doTranscode("http://www.jell.yfish.us/media/jellyfish-20-mbps-hd-hevc-10bit.mkv");
+		return "video transcoded";
+	}
+	
+	public String doTranscode(String videoPath) throws IOException {
+		Path inputPathPath = download(videoPath, "/usr/bin");
 		System.out.println("Video input path" + inputPathPath);
 		ffmpegTranscoder.generateVideoScreenShots(inputPathPath.toString(), "/usr/bin/thumb.jpg");
+		System.out.println("Uploading Image");
+		gcpUploadService.uploadImageFile("/usr/bin/thumb.jpg");
 		return "video transcoded";
 	}
 	
